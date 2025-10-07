@@ -4,7 +4,13 @@ let counter = function (increment) {
         counter if multiple counter functions are defined
     */
     //count = 0
-    //let count = 0;
+    let count = 0;
+    
+    function innerFunction(){
+        count = count + increment;
+        return count;
+    }
+    return innerFunction;
 
     /*
         Create and return an inner function that receives a value increment
@@ -12,8 +18,8 @@ let counter = function (increment) {
     */
 }
 
-let countByTwo; // set this variable to a closure that produces a counter that adds two each time it's called
-let countByOne; // set this variable to a closure that produces a counter that adds 1 each time it's called
+let countByTwo = counter(2); // set this variable to a closure that produces a counter that adds two each time it's called
+let countByOne = counter(1); // set this variable to a closure that produces a counter that adds 1 each time it's called
 
 // DO NOT change the lines below
 console.log(countByTwo());
